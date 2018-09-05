@@ -1,4 +1,4 @@
-var firstName = 'John';
+/* var firstName = 'John';
 var civilStatus = 'single';
 
 if (civilStatus === 'married') {
@@ -12,10 +12,10 @@ if (isMarried === true) {
     console.log(firstName + ' is married!');
 } else {
     console.log(firstName + ' will hopefully marry soon :)');
-}
+} */
 
-var massMark = 78; //kg 
-var heightMark = 1.95; //meters
+/* var massMark = 78; 
+var heightMark = 1.95; 
 
 var massJohn = 92;
 var heightJohn = 1.95;
@@ -28,20 +28,20 @@ if (BMIMark > BMIJohn) {
 } else {
     console.log('John\'s BMI is higher than Marks\'s.');
 }
-
+ */
 // Boolean logic 
-var firstName = 'John';
+/* var firstName = 'John';
 var age = 20;
 
 if (age < 13) {
     console.log(firstName + ' is a boy.');
-} else if (age >= 13 && age < 20) { //between 13 and 20 = age >= 13 and < age 20
+} else if (age >= 13 && age < 20) { 
     console.log(firstName + ' is a teenager.');
 } else if (age > 20 && age < 30) {
     console.log(firstName + ' is a young man.');
 } else {
     console.log(firstName + ' is a man.');
-}
+} */
 
 /*     AND (&&) true if ALL are true */
 /*     OR (||) true if ONE is true  */
@@ -238,7 +238,7 @@ console.log(isDesigner);
 
 /* CODING CHALLENGE: ARRAYS: TIP CALCULATOR */
 
-function tipCalculator(bill) {
+/* function tipCalculator(bill) {
     var percentage;
     if (bill < 50) {
         percentage = .2;
@@ -258,7 +258,7 @@ var finalValues = [bills[0] + tips[0],
 bills[1] + tips[1],
 bills[2] + tips[2]];
 
-console.log(tips, finalValues);
+console.log(tips, finalValues); */
 
 
 
@@ -266,7 +266,7 @@ console.log(tips, finalValues);
 
 
 // Object literal
-var john = {
+/* var john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1990,
@@ -282,19 +282,19 @@ console.log(john[x]);
 
 john.job = 'designer';
 john['isMarried'] = true;
-console.log(john);
+console.log(john); */
 
 // new Object syntax
-var jane = new Object();
+/* var jane = new Object();
 jane.name = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
-console.log(jane);
+console.log(jane); */
 
 
 /* Objects and methods */
 
-var john = {
+/* var john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1990,
@@ -307,12 +307,12 @@ var john = {
 };
 
 john.calcAge();
-console.log(john);
+console.log(john); */
 
 
 /* Coding Challenge 4  */
 
-var john = {
+/* var john = {
     fullName: 'John Smith',
     mass: 92,
     height: 1.95,
@@ -334,10 +334,10 @@ var mark = {
 
 john.calcBMI();
 mark.calcBMI();
-console.log(john, mark);
+console.log(john, mark); */
 
-if (
-    john.calcBMI()> mark.calcBMI()) {
+/* if (
+    john.calcBMI() > mark.calcBMI()) {
     console.log(john.fullName + ' has a higher BMI of ' + john.bmi);
 } else if (john.bmi === mark.bmi) {
     console.log('these sluts got the same BMI');
@@ -345,3 +345,71 @@ if (
     console.log(mark.fullName + ' has a higher BMI of ' + mark.bmi);
 }
 
+for (var i = 0; i < 10; i++) {
+    console.log(i); 
+}
+
+// i = 0, 0 , true, log i to console, i++
+//i = 1, 1 , 10 true, log i to the console, i++
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+for (var i = 0; i < john.length; i++) {
+    console.log(john[i]);
+} */
+
+
+//while loop
+
+/* var i = 0;
+while (i < john.length) {
+    console.log(john[i]);
+    i++;
+}  */
+
+
+// continue and break statements 
+
+
+/* var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') continue;
+    console.log(john[i]);
+} */
+
+
+/* for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') break;
+    console.log(john[i]);
+} */
+
+
+// Looping backwards 
+/* for (var i = john.length - 1; i >= 0; i--) {
+    console.log(john[i]);
+} */
+
+
+var john = {
+    fullName: 'John Smith',
+    bills: [124, 48, 268, 180, 42],
+    calcTips: function() {
+        this.tips = [];
+        this.finalValues = [];
+
+        for (var i = 0; i < this.bills.length; i++) {
+            var percentage; 
+            var bill = this.bills[i];
+
+            if (bill < 50 ) {
+                percentage = .2;
+            } else if (bill >= 50 && bill < 200) {
+                percentage = .15;
+            } else {
+                percentage = .1;
+            }
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;
+        } 
+    }
+}
