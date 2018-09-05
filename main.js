@@ -252,11 +252,11 @@ function tipCalculator(bill) {
 
 var bills = [124, 48, 268];
 var tips = [tipCalculator(bills[0]),
-            tipCalculator(bills[1]),
-            tipCalculator(bills[2])];
+tipCalculator(bills[1]),
+tipCalculator(bills[2])];
 var finalValues = [bills[0] + tips[0],
-                   bills[1] + tips[1],
-                   bills[2] + tips[2]];
+bills[1] + tips[1],
+bills[2] + tips[2]];
 
 console.log(tips, finalValues);
 
@@ -267,11 +267,11 @@ console.log(tips, finalValues);
 
 // Object literal
 var john = {
-    firstName: 'John', 
+    firstName: 'John',
     lastName: 'Smith',
-    birthYear: 1990, 
+    birthYear: 1990,
     family: ['Jane', 'Mark', 'Bob', 'Emily'],
-    job: 'teacher', 
+    job: 'teacher',
     isMarried: false
 };
 
@@ -288,6 +288,60 @@ console.log(john);
 var jane = new Object();
 jane.name = 'Jane';
 jane.birthYear = 1969;
-jane ['lastName'] = 'Smith';
+jane['lastName'] = 'Smith';
 console.log(jane);
+
+
+/* Objects and methods */
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function () {
+        this.age = 2018 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john);
+
+
+/* Coding Challenge 4  */
+
+var john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+var mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+john.calcBMI();
+mark.calcBMI();
+console.log(john, mark);
+
+if (
+    john.calcBMI()> mark.calcBMI()) {
+    console.log(john.fullName + ' has a higher BMI of ' + john.bmi);
+} else if (john.bmi === mark.bmi) {
+    console.log('these sluts got the same BMI');
+} else {
+    console.log(mark.fullName + ' has a higher BMI of ' + mark.bmi);
+}
 
